@@ -88,7 +88,6 @@ function SignIn() {
         <h2 style={{ color: 'white', textAlign: 'center' }}>Join the Marathon</h2>
 
         <input
-          style={styles.input}
           name="username"
           value={form.username}
           onChange={handleChange}
