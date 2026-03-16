@@ -5,7 +5,6 @@ function SignIn() {
     username: '',
     email: '',
     password: '',
-    confirmPassword: ''
   });
 
   const [error, setError] = useState("");
@@ -22,6 +21,7 @@ function SignIn() {
   function handleSubmit(e) {
     e.preventDefault();
     
+    // Logic: Check if passwords match before "sending" data
     if (form.password !== form.confirmPassword) {
       setError("Passwords do not match!");
       return;
@@ -39,7 +39,7 @@ function SignIn() {
       justifyContent: 'center',
       alignItems: 'center',
       minHeight: '100vh',
-      background: 'linear-gradient(45deg, #0f0c29, #302b63, #24243e)',
+      background: 'linear-gradient(45deg, #9e66a0, #302b63, #24243e)',
       fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
     },
     formCard: {
@@ -85,9 +85,10 @@ function SignIn() {
   return (
     <div style={styles.wrapper}>
       <form style={styles.formCard} onSubmit={handleSubmit}>
-        <h2 style={{ color: 'white', textAlign: 'center' }}>Join the Marathon</h2>
+        <h2 style={{ color: 'white', textAlign: 'center' }}>Join Web Development</h2>
 
         <input
+          style={styles.input}
           name="username"
           value={form.username}
           onChange={handleChange}
@@ -114,19 +115,10 @@ function SignIn() {
           placeholder="Password"
         />
 
-        <input
-          style={styles.input}
-          name="confirmPassword"
-          type="password"
-          value={form.confirmPassword}
-          onChange={handleChange}
-          placeholder="Confirm Password"
-        />
-
         {error && <p style={styles.error}>{error}</p>}
 
         <button style={styles.button} type="submit">
-          START CODING
+          SIGN IN
         </button>
       </form>
     </div>
